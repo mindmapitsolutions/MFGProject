@@ -867,8 +867,8 @@
                 //redirectTo: "config.calendars.create",
                 data: {
                     actions: [
-                        { title: "Machine1", icon: "add", state: "setup.machine.create", description: "Create ...." },
-                        { title: "Machine2", icon: "capture", state: "setup.machine.capture", description: "Capture ..." }
+                        { title: "Add", icon: "add", state: "setup.machine.add", description: "add ...." },
+                        { title: "View", icon: "view", state: "setup.machine.view", description: "view ..." }
                     ]
                 }
             })
@@ -880,6 +880,28 @@
                 //redirectTo: "config.calendars.create",
                 data: {
                     title: "Machine",
+                    blurb: "Here's where you manage your Machines."
+                }
+            })
+            .state("setup.machine.add",
+            {
+                //requireADLogin: true,
+                url: "add",
+                templateUrl: "views/components/setup/machine/add.html",
+                //redirectTo: "config.calendars.create",
+                data: {
+                    title: "Add a new machine",
+                    blurb: "Here's where you manage your Machines."
+                }
+            })
+            .state("setup.machine.view",
+            {
+                //requireADLogin: true,
+                url: "view",
+                templateUrl: "views/components/setup/machine/view.html",
+                //redirectTo: "config.calendars.create",
+                data: {
+                    title: "View Machine",
                     blurb: "Here's where you manage your Machines."
                 }
             })
