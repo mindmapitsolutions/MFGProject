@@ -1,0 +1,8 @@
+<svg fill="#000000" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<g>
+	<path d="M9,11H2c-0.6,0-1,0.4-1,1c0,0.6,0.4,1,1,1h7V11z"/>
+	<path d="M22,11h-7v2h7c0.6,0,1-0.4,1-1C23,11.4,22.6,11,22,11z"/>
+	<path d="M13,11V9V2c0-0.6-0.4-1-1-1c-0.6,0-1,0.4-1,1v7v2v2v2v7c0,0.6,0.4,1,1,1c0.6,0,1-0.4,1-1v-7v-2V11z"/>
+</g>
+</svg>

@@ -1,0 +1,22 @@
+﻿<div layout-margin>
+    <div ng-if="$state.current.data.actions.length > 0">
+        <md-content class="md-padding" layout-xs="column" layout="row">
+            <div layout="row" layout-wrap style="width:100%">
+                <md-card ng-repeat="item in $state.current.data.actions" flex="30" ng-click="$state.go(item.state)" style="cursor: pointer; cursor: hand;">
+                    <md-card-title>
+                        <md-card-title-media>
+                            <md-icon class="md-media-sm" md-svg-icon="action_{{ item.icon }}_black" aria-label="{{ item.icon }}" alt="{{ item.icon }}"></md-icon>
+                        </md-card-title-media>
+                        <md-card-title-text class="ml-lg">
+                            <span class="md-headline">{{item.title}}</span>
+                            <span class="md-subhead">{{item.description}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <!--<md-card-content>
+                    </md-card-content>-->
+                </md-card>
+            </div>
+        </md-content>
+    </div>
+</div>
+<mo-landing-page></mo-landing-page>

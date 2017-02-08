@@ -1,0 +1,40 @@
+<div layout="row" layout-fill>
+    <md-sidenav class="md-sidenav-left" ng-class="{ 'collapsed' : $mdMedia('gt-sm') ? sidenavCollapsed : true }" md-component-id="left" md-is-locked-open="true" md-disable-backdrop md-whiteframe="-1">
+        <div layout="column">
+            <md-nav-bar aria-label="sidebar navigation">
+                <md-nav-item name="logo" class="logo" md-nav-href="/">
+                    <img src="/images/mo/logo.png" alt="logo" aria-label="logo" />
+                </md-nav-item>
+            </md-nav-bar>
+            <md-list>
+                <md-list-item>
+                    <md-button class="menu" ng-click="sidenavCollapsed = !sidenavCollapsed">
+                        <md-icon md-svg-icon="menu_white" aria-label="menu" alt="menu"></md-icon>
+                    </md-button>
+                </md-list-item>
+                <md-list-item ng-repeat="item in $state.current.data.menu">
+                    <md-button ui-sref="{{ item.state }}" ng-class="{ 'md-active': includesMenuState(item.state) }">
+                        <md-icon md-svg-icon="menu_{{ item.icon }}{{ includesMenuState(item.state) ? '_black' : '_white' }}" aria-label="{{ item.icon }}" alt="{{ item.icon }}"></md-icon>{{ item.title }}
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </div>
+    </md-sidenav>
+
+</div>
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Real-Time Machine Status Monitoring v1.0</a>
+    </div>
+    <!-- /.navbar-header -->
+    <!--<header-notification></header-notification>-->
+
+    <sidebar></sidebar>
+</nav>
