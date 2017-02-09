@@ -40,6 +40,60 @@
 })();
 (function () {
 
+    angular.module("dashboard.dashboard1")
+        .directive("sbDashboardView", DashboardView);
+
+    DashboardView.$inject = ["resizeService"];
+
+    function DashboardView(resizeService) {
+        var directive = {
+            restrict: "AE",
+            replace: false,
+            templateUrl: "/views/components/dashboard/dashboard1/view.html",
+            link: linkFunc,
+            controller: DashboardViewController,
+            controllerAs: "vm"
+        };
+        return directive;
+
+        function linkFunc(scope, element) {
+            
+        }
+    }
+
+    DashboardViewController.$inject = ["$scope", "dashboardService", "lookupsService", "TABLE_DEFAULTS"];
+
+    function DashboardViewController($scope, dashboardService, lookupsService, TABLE_DEFAULTS) {
+        var vm = this;
+        vm.dashboardParams = {
+            id: 0,
+            machineId:0
+        }
+        vm.machineConfig = dashboardService.get(vm.dashboardParams,
+            function (response) {
+                console.log(response);
+            },
+            function (error) {
+                console.log(error);
+            });
+    }
+
+})();
+(function () {
+
+    angular.module("dashboard.dashboard1")
+        .service("dashboardService", DashboardService);
+
+    DashboardService.$inject = ["apiService"];
+
+    function DashboardService(apiService) {
+        return apiService("api/dashboard/:accountStructureId/:parentId/:searchTerm");
+    }
+
+
+})();
+(function () {
+
     angular.module("sb.shared",
         [
             //"ngSanitize",
@@ -196,6 +250,18 @@
         }
 
         return vm;
+    }
+
+})();
+(function() {
+
+    angular.module("sb.shared")
+        .factory("_", Lodash);
+
+    Lodash.$inject = [];
+
+    function Lodash() {
+        return window._;  // Lodash must already be loaded on the page
     }
 
 })();
@@ -529,6 +595,7 @@
                 'delete': { method: "PUT", interceptor: resourceInterceptor },
             });
 
+            var url = "http://www.google.com/" + url
             var result = $resource(url, paramDefaults, actions, options);
             //
             // remove parameters and set url string here so that we can use it in kendo grid data sources

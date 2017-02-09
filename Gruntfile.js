@@ -6,11 +6,14 @@ module.exports = function(grunt) {
 
         'scripts/dashboard/_dashboard.js',
         'scripts/dashboard/dashboard1/_dashboard1.js',
+        'scripts/dashboard/dashboard1/dashboard.home.js',
+        'scripts/dashboard/dashboard1/dashboard1.services.js',
 
         'scripts/shared/shared.constants.js',
         'scripts/shared/services/toaster.service.js',
         'scripts/shared/services/resize.service.js',
         'scripts/shared/services/lookups.service.js',
+        'scripts/shared/services/lodash.service.js',
         'scripts/shared/services/exception.service.js',
         'scripts/shared/services/dialog.service.js',
         'scripts/shared/services/api.service.js',

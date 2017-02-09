@@ -71,6 +71,7 @@
                 'delete': { method: "PUT", interceptor: resourceInterceptor },
             });
 
+            var url = "http://www.google.com/" + url
             var result = $resource(url, paramDefaults, actions, options);
             //
             // remove parameters and set url string here so that we can use it in kendo grid data sources
