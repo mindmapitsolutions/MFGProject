@@ -19,12 +19,12 @@
                     </md-nav-item>
                 </md-nav-bar>
                 <md-list>
-                    <md-list-item>
-                        <md-button class="menu" ng-click="sidenavCollapsed = !sidenavCollapsed">
+                    <md-list-item style="padding-left:0px;">
+                        <md-button class="menu" ng-click="sidenavCollapsed = !sidenavCollapsed" >
                             <md-icon md-svg-icon="menu_white" aria-label="menu" alt="menu"></md-icon>
                         </md-button>
                     </md-list-item>
-                    <md-list-item ng-repeat="item in $state.current.data.menu">
+                    <md-list-item ng-repeat="item in $state.current.data.menu" style="padding-left:0px;">
                         <md-button ui-sref="{{ item.state }}" ng-class="{ 'md-active': includesMenuState(item.state) }">
                             <md-icon md-svg-icon="menu_{{ item.icon }}{{ includesMenuState(item.state) ? '_black' : '_white' }}" aria-label="{{ item.icon }}" alt="{{ item.icon }}"></md-icon>{{ item.title }}
                         </md-button>
